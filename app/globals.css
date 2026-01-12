@@ -10,9 +10,15 @@ body {
   @apply bg-gradient-to-br from-blue-50 to-slate-50 text-gray-900;
 }
 
-/* Custom scrollbar for main content */
+/* Custom scrollbar for main content - hide on mobile */
 main::-webkit-scrollbar {
   width: 8px;
+}
+
+@media (max-width: 640px) {
+  main::-webkit-scrollbar {
+    width: 4px;
+  }
 }
 
 main::-webkit-scrollbar-track {
@@ -33,6 +39,13 @@ section {
   scroll-margin-top: 0;
 }
 
+/* Mobile scroll margin for fixed header */
+@media (max-width: 1024px) {
+  section {
+    scroll-margin-top: 56px; /* Height of mobile header */
+  }
+}
+
 /* Hide scrollbar for carousel but keep scroll functionality */
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
@@ -41,6 +54,13 @@ section {
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+/* Touch scroll improvements for mobile */
+@media (max-width: 1024px) {
+  .scrollbar-hide {
+    -webkit-overflow-scrolling: touch;
+  }
 }
 
 /* Horizontal bounce animation for scroll indicator */
@@ -56,4 +76,11 @@ section {
 
 .animate-bounce-x {
   animation: bounce-x 1.5s ease-in-out infinite;
+}
+
+/* Safe area insets for mobile devices with notches */
+@supports (padding: max(0px)) {
+  .pb-safe {
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
 }

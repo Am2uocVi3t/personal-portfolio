@@ -38,7 +38,7 @@ export default function Sidebar({ activeSection }: SidebarProps) {
   };
 
   return (
-    <aside className="w-72 px-6 py-10 flex flex-col justify-between fixed h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-slate-50 border-r border-blue-100/50 shadow-[4px_0_24px_-2px_rgba(59,130,246,0.15)]">
+    <aside className="hidden lg:flex w-72 px-6 py-10 flex-col justify-between fixed h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-slate-50 border-r border-blue-100/50 shadow-[4px_0_24px_-2px_rgba(59,130,246,0.15)]">
       {/* Decorative accent line */}
       <div className="absolute right-0 top-0 bottom-0 w-[3px] bg-gradient-to-b from-blue-400 via-indigo-500 to-blue-400"></div>
 
