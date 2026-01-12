@@ -1,6 +1,7 @@
 import "./globals.css";
 import MainContent from "./components/MainContent";
 import type { Metadata } from "next";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata: Metadata = {
   title: "Huynh Quoc Viet | Portfolio",
@@ -33,6 +34,7 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body className="bg-gradient-to-b from-gray-50 to-white text-gray-900 antialiased overflow-hidden">
         <MainContent />
+        <SpeedInsights />
       </body>
     </html>
   );
