@@ -299,144 +299,159 @@ export default function SinglePageContent({
             </p>
           </div>
 
-          {/* Featured Projects Preview - Netflix Style Carousel */}
+          {/* Featured Projects - Grid Layout */}
           <div className="space-y-6">
             <h3 className="text-xl font-medium text-center">
-              Featured Projects
+              Favorite Projects
             </h3>
 
-            <div className="relative">
-              {/* Left fade indicator */}
-              <div className="absolute left-0 top-0 bottom-4 w-12 bg-gradient-to-r from-slate-50 to-transparent z-10 pointer-events-none" />
-              {/* Right fade indicator with animated arrow */}
-              <div className="absolute right-0 top-0 bottom-4 w-16 bg-gradient-to-l from-slate-50 via-slate-50/80 to-transparent z-10 pointer-events-none flex items-center justify-end pr-2">
-                <div className="w-8 h-8 rounded-full bg-white/80 shadow-md flex items-center justify-center animate-bounce-x">
-                  <svg
-                    className="w-4 h-4 text-gray-400"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
+            {/* Grid Container - 1 col mobile, 2 col tablet, 3 col desktop */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 px-4">
+              {/* Project Card 1 */}
+              <a href="#projects" className="block group">
+                <div className="rounded-xl border border-blue-100 p-4 sm:p-6 bg-white shadow-sm hover:shadow-lg hover:border-blue-300 transition-all duration-200 h-full cursor-pointer">
+                  <div className="w-full h-28 sm:h-32 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg mb-4 flex items-center justify-center group-hover:scale-[1.02] transition-transform duration-200">
+                    <svg
+                      className="w-10 h-10 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={1.5}
+                        d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"
+                      />
+                    </svg>
+                  </div>
+                  <h4 className="font-semibold text-lg group-hover:text-blue-600 transition-colors">
+                    Regime-Adaptive Stock Forecasting
+                  </h4>
+                  <p className="mt-2 text-sm text-gray-600">
+                    My thesis project - trying to predict stock prices by first
+                    detecting market "moods" (bull/bear/sideways) before
+                    forecasting. Still tweaking the HMM-LSTM combo.
+                  </p>
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    <span className="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded-full">
+                      TimeSeries
+                    </span>
+                    <span className="px-2 py-1 bg-indigo-100 text-indigo-700 text-xs rounded-full">
+                      LSTM
+                    </span>
+                    <span className="px-2 py-1 bg-purple-100 text-purple-700 text-xs rounded-full">
+                      HMM
+                    </span>
+                  </div>
                 </div>
-              </div>
-              {/* Scroll Container */}
-              <div
-                ref={featuredProjectsRef}
-                className="flex gap-4 overflow-x-scroll pb-4 px-4 scrollbar-hide"
-                style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+              </a>
+
+              {/* Project Card 2 */}
+              <a href="#projects" className="block group">
+                <div className="rounded-xl border border-blue-100 p-4 sm:p-6 bg-white shadow-sm hover:shadow-lg hover:border-green-300 transition-all duration-200 h-full cursor-pointer">
+                  <div className="w-full h-28 sm:h-32 bg-gradient-to-br from-green-500 to-teal-600 rounded-lg mb-4 flex items-center justify-center group-hover:scale-[1.02] transition-transform duration-200">
+                    <svg
+                      className="w-10 h-10 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={1.5}
+                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                      />
+                    </svg>
+                  </div>
+                  <h4 className="font-semibold text-lg group-hover:text-green-600 transition-colors">
+                    PPE Detection System
+                  </h4>
+                  <p className="mt-2 text-sm text-gray-600">
+                    Built for a factory safety use case. Spent weeks merging
+                    messy datasets and comparing YOLO vs RT-DETR. The demo
+                    actually works in real-time which was satisfying.
+                  </p>
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    <span className="px-2 py-1 bg-green-100 text-green-700 text-xs rounded-full">
+                      ComputerVision
+                    </span>
+                    <span className="px-2 py-1 bg-teal-100 text-teal-700 text-xs rounded-full">
+                      YOLO
+                    </span>
+                    <span className="px-2 py-1 bg-emerald-100 text-emerald-700 text-xs rounded-full">
+                      ObjectDetection
+                    </span>
+                  </div>
+                </div>
+              </a>
+
+              {/* Project Card 3 */}
+              <a
+                href="#projects"
+                className="block group md:col-span-2 lg:col-span-1"
               >
-                {/* Project Card 1 */}
-                <div className="flex-shrink-0 w-72 sm:w-80">
-                  <div className="rounded-xl border border-blue-100 p-4 sm:p-6 bg-white shadow-sm hover:shadow-lg transition-shadow duration-200 h-full">
-                    <div className="w-full h-28 sm:h-32 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg mb-4 flex items-center justify-center">
-                      <span className="text-white text-3xl sm:text-4xl">
-                        📈
-                      </span>
-                    </div>
-                    <h4 className="font-semibold text-lg">
-                      Regime-Adaptive Stock Forecasting
-                    </h4>
-                    <p className="mt-2 text-sm text-gray-600">
-                      Hybrid HMM + LSTM model for regime-aware financial
-                      time-series prediction under non-stationary market
-                      conditions.
-                    </p>
-                    <div className="mt-3 flex flex-wrap gap-2">
-                      <span className="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded-full">
-                        TimeSeries
-                      </span>
-                      <span className="px-2 py-1 bg-indigo-100 text-indigo-700 text-xs rounded-full">
-                        LSTM
-                      </span>
-                      <span className="px-2 py-1 bg-purple-100 text-purple-700 text-xs rounded-full">
-                        HMM
-                      </span>
-                    </div>
+                <div className="rounded-xl border border-blue-100 p-4 sm:p-6 bg-white shadow-sm hover:shadow-lg hover:border-purple-300 transition-all duration-200 h-full cursor-pointer">
+                  <div className="w-full h-28 sm:h-32 bg-gradient-to-br from-violet-500 to-purple-600 rounded-lg mb-4 flex items-center justify-center group-hover:scale-[1.02] transition-transform duration-200">
+                    <svg
+                      className="w-10 h-10 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={1.5}
+                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                      />
+                    </svg>
+                  </div>
+                  <h4 className="font-semibold text-lg group-hover:text-purple-600 transition-colors">
+                    Face Recognition Attendance
+                  </h4>
+                  <p className="mt-2 text-sm text-gray-600">
+                    One of my first "real" projects. Simple but learned a lot
+                    about OpenCV and dealing with lighting issues. The Tkinter
+                    GUI looks dated but it works.
+                  </p>
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    <span className="px-2 py-1 bg-violet-100 text-violet-700 text-xs rounded-full">
+                      OpenCV
+                    </span>
+                    <span className="px-2 py-1 bg-purple-100 text-purple-700 text-xs rounded-full">
+                      LBPH
+                    </span>
+                    <span className="px-2 py-1 bg-fuchsia-100 text-fuchsia-700 text-xs rounded-full">
+                      Tkinter
+                    </span>
                   </div>
                 </div>
+              </a>
+            </div>
 
-                {/* Project Card 2 */}
-                <div className="flex-shrink-0 w-72 sm:w-80">
-                  <div className="rounded-xl border border-blue-100 p-4 sm:p-6 bg-white shadow-sm hover:shadow-lg transition-shadow duration-200 h-full">
-                    <div className="w-full h-28 sm:h-32 bg-gradient-to-br from-green-500 to-teal-600 rounded-lg mb-4 flex items-center justify-center">
-                      <span className="text-white text-3xl sm:text-4xl">
-                        🦺
-                      </span>
-                    </div>
-                    <h4 className="font-semibold text-lg">
-                      PPE Detection System
-                    </h4>
-                    <p className="mt-2 text-sm text-gray-600">
-                      Benchmarking YOLOv8 and RT-DETR for real-time personal
-                      protective equipment detection in industrial environments.
-                    </p>
-                    <div className="mt-3 flex flex-wrap gap-2">
-                      <span className="px-2 py-1 bg-green-100 text-green-700 text-xs rounded-full">
-                        ComputerVision
-                      </span>
-                      <span className="px-2 py-1 bg-teal-100 text-teal-700 text-xs rounded-full">
-                        YOLO
-                      </span>
-                      <span className="px-2 py-1 bg-emerald-100 text-emerald-700 text-xs rounded-full">
-                        ObjectDetection
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Project Card 3 */}
-                <div className="flex-shrink-0 w-72 sm:w-80">
-                  <div className="rounded-xl border border-blue-100 p-4 sm:p-6 bg-white shadow-sm hover:shadow-lg transition-shadow duration-200 h-full">
-                    <div className="w-full h-28 sm:h-32 bg-gradient-to-br from-orange-500 to-red-600 rounded-lg mb-4 flex items-center justify-center">
-                      <span className="text-white text-3xl sm:text-4xl">
-                        🎱
-                      </span>
-                    </div>
-                    <h4 className="font-semibold text-lg">
-                      8-Ball Billiards Computer Vision
-                    </h4>
-                    <p className="mt-2 text-sm text-gray-600">
-                      Real-time ball tracking system with rule-based scoring for
-                      8-ball and carom billiards using deep learning.
-                    </p>
-                    <div className="mt-3 flex flex-wrap gap-2">
-                      <span className="px-2 py-1 bg-orange-100 text-orange-700 text-xs rounded-full">
-                        CV
-                      </span>
-                      <span className="px-2 py-1 bg-red-100 text-red-700 text-xs rounded-full">
-                        YOLO
-                      </span>
-                      <span className="px-2 py-1 bg-amber-100 text-amber-700 text-xs rounded-full">
-                        SportsAnalytics
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* More Projects Card */}
-                <div className="flex-shrink-0 w-72 sm:w-80">
-                  <a href="#projects" className="block h-full">
-                    <div className="rounded-xl border-2 border-dashed border-blue-300 p-4 sm:p-6 bg-blue-50 hover:bg-blue-100 transition-colors duration-200 h-full flex flex-col items-center justify-center">
-                      <div className="w-14 sm:w-16 h-14 sm:h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center mb-4">
-                        <span className="text-white text-2xl">→</span>
-                      </div>
-                      <h4 className="font-semibold text-lg text-blue-700">
-                        View All Projects
-                      </h4>
-                      <p className="mt-2 text-sm text-blue-600 text-center">
-                        Explore more AI and ML projects
-                      </p>
-                    </div>
-                  </a>
-                </div>
-              </div>
+            {/* View All Projects Button */}
+            <div className="flex justify-center pt-2">
+              <a
+                href="#projects"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-medium rounded-full hover:from-blue-600 hover:to-indigo-700 transition-all duration-200 shadow-md hover:shadow-lg"
+              >
+                View All Projects
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+              </a>
             </div>
           </div>
         </div>
@@ -455,7 +470,7 @@ export default function SinglePageContent({
         {/* Section Header */}
         <div className="text-center mb-10 sm:mb-16 relative z-10">
           <span className="inline-block px-4 py-1.5 bg-indigo-100 text-indigo-700 text-sm font-medium rounded-full mb-4">
-            🎯 Get to Know Me
+            Get to Know Me
           </span>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight">
             <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
@@ -478,28 +493,22 @@ export default function SinglePageContent({
             <div className="bg-white/90 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 shadow-xl border border-blue-100 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-24 sm:w-32 h-24 sm:h-32 bg-blue-50 rounded-full"></div>
               <p className="text-lg sm:text-xl md:text-2xl text-gray-700 leading-relaxed font-light italic relative z-10">
-                I am an Artificial Intelligence student at FPT University with a
-                strong passion for
+                Hi! I'm an AI student at FPT University. I got into this field
+                because I wanted to understand how machines can "see" and
+                "predict" things. Most of my time goes into reading papers,
+                breaking code, fixing it, and occasionally getting something to
+                actually work. I'm particularly drawn to
                 <span className="font-semibold text-blue-600">
                   {" "}
-                  research-oriented machine learning
+                  computer vision{" "}
                 </span>
-                . My academic focus lies at the intersection of
+                and
                 <span className="font-semibold text-indigo-600">
                   {" "}
-                  computer vision
+                  time-series problems
                 </span>
-                ,
-                <span className="font-semibold text-purple-600">
-                  {" "}
-                  time-series forecasting
-                </span>
-                , and
-                <span className="font-semibold text-pink-600">
-                  {" "}
-                  applied deep learning systems
-                </span>
-                .
+                — there's something satisfying about turning messy data into
+                something useful.
               </p>
             </div>
             <div className="absolute -bottom-4 -right-4 text-8xl text-blue-200 font-serif rotate-180">
@@ -514,7 +523,21 @@ export default function SinglePageContent({
               <div className="bg-white/95 rounded-xl sm:rounded-2xl p-5 sm:p-8 shadow-lg border border-blue-100 hover:shadow-xl transition-shadow duration-300 h-full">
                 <div className="flex items-center gap-3 mb-4 sm:mb-6">
                   <div className="w-10 sm:w-12 h-10 sm:h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg sm:rounded-xl flex items-center justify-center shadow-md">
-                    <span className="text-white text-lg sm:text-xl">🎓</span>
+                    <svg
+                      className="w-5 h-5 sm:w-6 sm:h-6 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                      <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
+                      />
+                    </svg>
                   </div>
                   <h3 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
                     Education
@@ -550,7 +573,7 @@ export default function SinglePageContent({
                         </p>
                         <div className="mt-2 flex items-center gap-2">
                           <span className="px-2 py-0.5 bg-amber-100 text-amber-700 text-xs rounded-full">
-                            🏆 Honorable Student (Sem 5)
+                            Honorable Student (Sem 5)
                           </span>
                         </div>
                         <div className="mt-3 flex items-center gap-3">
@@ -592,10 +615,7 @@ export default function SinglePageContent({
                         </p>
                         <div className="mt-2 flex items-center gap-2">
                           <span className="px-2 py-0.5 bg-teal-100 text-teal-700 text-xs rounded-full">
-                            🌏 Academic Mobility
-                          </span>
-                          <span className="px-2 py-0.5 bg-emerald-100 text-emerald-700 text-xs rounded-full">
-                            Cross-cultural Skills
+                            Exchange Program
                           </span>
                         </div>
                       </div>
@@ -610,7 +630,19 @@ export default function SinglePageContent({
               <div className="bg-white/95 rounded-xl sm:rounded-2xl p-5 sm:p-8 shadow-lg border border-purple-100 hover:shadow-xl transition-shadow duration-300 h-full">
                 <div className="flex items-center gap-3 mb-4 sm:mb-6">
                   <div className="w-10 sm:w-12 h-10 sm:h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg sm:rounded-xl flex items-center justify-center shadow-md">
-                    <span className="text-white text-lg sm:text-xl">🔬</span>
+                    <svg
+                      className="w-5 h-5 sm:w-6 sm:h-6 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                      />
+                    </svg>
                   </div>
                   <h3 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
                     Research Interests
@@ -677,7 +709,25 @@ export default function SinglePageContent({
             <div className="bg-white/95 rounded-xl sm:rounded-2xl p-5 sm:p-8 shadow-lg border border-emerald-100 hover:shadow-xl transition-shadow duration-300">
               <div className="flex items-center gap-3 mb-6 sm:mb-8">
                 <div className="w-10 sm:w-12 h-10 sm:h-12 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-lg sm:rounded-xl flex items-center justify-center shadow-md">
-                  <span className="text-white text-lg sm:text-xl">🛠️</span>
+                  <svg
+                    className="w-5 h-5 sm:w-6 sm:h-6 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                  </svg>
                 </div>
                 <h3 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
                   Tools & Technologies
@@ -834,7 +884,7 @@ export default function SinglePageContent({
         {/* Section Header */}
         <div className="text-center mb-8 sm:mb-12">
           <span className="inline-block px-4 py-1.5 bg-purple-100 text-purple-700 text-sm font-medium rounded-full mb-4">
-            💼 My Work
+            My Work
           </span>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight">
             <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
@@ -861,7 +911,19 @@ export default function SinglePageContent({
               {/* Project Header with Gradient */}
               <div className="h-36 sm:h-48 bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-600 relative overflow-hidden">
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-5xl sm:text-7xl">📈</span>
+                  <svg
+                    className="w-16 h-16 sm:w-20 sm:h-20 text-white/90"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.5}
+                      d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"
+                    />
+                  </svg>
                 </div>
                 {/* Decorative circles */}
                 <div className="absolute -top-10 -right-10 w-40 h-40 bg-white/10 rounded-full"></div>
@@ -876,7 +938,7 @@ export default function SinglePageContent({
                       Regime-Adaptive Stock Forecasting
                     </h3>
                     <p className="text-xs sm:text-sm text-indigo-600 font-medium mt-1">
-                      Research Lead · Time-Series Forecasting
+                      Thesis Project
                     </p>
                   </div>
                   <span className="px-3 py-1 bg-green-100 text-green-700 text-xs font-semibold rounded-full">
@@ -885,10 +947,10 @@ export default function SinglePageContent({
                 </div>
 
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Developed a regime-aware forecasting framework combining
-                  Hidden Markov Models and LSTM networks to model market state
-                  transitions and improve robustness under non-stationary
-                  financial conditions.
+                  My graduation thesis. The idea is to detect market "regimes"
+                  (trending up, down, or sideways) first, then use that info to
+                  improve predictions. Combining HMM for regime detection with
+                  LSTM for forecasting. Still debugging edge cases.
                 </p>
 
                 {/* Tech Stack Tags */}
@@ -927,7 +989,19 @@ export default function SinglePageContent({
             <div className="group bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
               <div className="h-36 sm:h-48 bg-gradient-to-br from-emerald-500 via-teal-500 to-cyan-600 relative overflow-hidden">
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-5xl sm:text-7xl">🦺</span>
+                  <svg
+                    className="w-16 h-16 sm:w-20 sm:h-20 text-white/90"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.5}
+                      d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                    />
+                  </svg>
                 </div>
                 <div className="absolute -top-10 -right-10 w-40 h-40 bg-white/10 rounded-full"></div>
                 <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-white/10 rounded-full"></div>
@@ -940,7 +1014,7 @@ export default function SinglePageContent({
                       PPE Detection System
                     </h3>
                     <p className="text-xs sm:text-sm text-emerald-600 font-medium mt-1">
-                      Deep Learning Engineer · Computer Vision
+                      Computer Vision
                     </p>
                   </div>
                   <span className="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-semibold rounded-full">
@@ -949,10 +1023,10 @@ export default function SinglePageContent({
                 </div>
 
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Consolidated multiple public datasets into a unified benchmark
-                  for personal protective equipment detection and evaluated
-                  modern object detection architectures for accuracy-latency
-                  trade-offs.
+                  Factory safety project. Spent a lot of time cleaning and
+                  merging public datasets (they were a mess). Compared YOLOv8 vs
+                  RT-DETR for detecting helmets, vests, gloves. Built a
+                  Streamlit demo that actually runs smoothly in real-time.
                 </p>
 
                 <div className="flex flex-wrap gap-2 pt-2">
@@ -991,7 +1065,15 @@ export default function SinglePageContent({
             <div className="group bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
               <div className="h-36 sm:h-48 bg-gradient-to-br from-orange-500 via-red-500 to-pink-600 relative overflow-hidden">
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-5xl sm:text-7xl">🎱</span>
+                  <svg
+                    className="w-16 h-16 sm:w-20 sm:h-20 text-white/90"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle cx="12" cy="12" r="10" strokeWidth={1.5} />
+                    <circle cx="12" cy="12" r="3" strokeWidth={1.5} />
+                  </svg>
                 </div>
                 <div className="absolute -top-10 -right-10 w-40 h-40 bg-white/10 rounded-full"></div>
                 <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-white/10 rounded-full"></div>
@@ -1001,10 +1083,10 @@ export default function SinglePageContent({
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
                   <div>
                     <h3 className="text-lg sm:text-xl font-bold text-gray-800 group-hover:text-orange-600 transition-colors">
-                      8-Ball Billiards Computer Vision
+                      Billiards Ball Tracking
                     </h3>
                     <p className="text-xs sm:text-sm text-orange-600 font-medium mt-1">
-                      AI Engineer · Real-time Vision
+                      Fun Side Project
                     </p>
                   </div>
                   <span className="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-semibold rounded-full">
@@ -1013,9 +1095,10 @@ export default function SinglePageContent({
                 </div>
 
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Built a real-time computer vision pipeline to detect billiard
-                  balls, track trajectories, and infer scoring events using
-                  hybrid rule-based logic and deep learning models.
+                  Started because my friends and I kept arguing about who potted
+                  which ball. Tracks balls in real-time and tries to auto-score
+                  8-ball games. The tracking works well, but scoring logic still
+                  has some edge cases.
                 </p>
 
                 <div className="flex flex-wrap gap-2 pt-2">
@@ -1054,7 +1137,19 @@ export default function SinglePageContent({
             <div className="group bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
               <div className="h-36 sm:h-48 bg-gradient-to-br from-violet-500 via-purple-500 to-fuchsia-600 relative overflow-hidden">
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-5xl sm:text-7xl">👤</span>
+                  <svg
+                    className="w-16 h-16 sm:w-20 sm:h-20 text-white/90"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.5}
+                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                    />
+                  </svg>
                 </div>
                 <div className="absolute -top-10 -right-10 w-40 h-40 bg-white/10 rounded-full"></div>
                 <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-white/10 rounded-full"></div>
@@ -1067,7 +1162,7 @@ export default function SinglePageContent({
                       Face Recognition Attendance
                     </h3>
                     <p className="text-xs sm:text-sm text-purple-600 font-medium mt-1">
-                      Model Engineer · Biometric Systems
+                      University Project
                     </p>
                   </div>
                   <span className="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-semibold rounded-full">
@@ -1076,10 +1171,10 @@ export default function SinglePageContent({
                 </div>
 
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Built an end-to-end attendance system using OpenCV and Tkinter
-                  with LBPH for recognition and Haar Cascades for real-time face
-                  detection. Optimized for partial occlusions (glasses) and
-                  varying lighting conditions.
+                  My first "real" ML project from freshman year. Basic face
+                  recognition for attendance tracking. The GUI (Tkinter) looks
+                  dated but it taught me a lot about OpenCV and dealing with
+                  poor lighting conditions.
                 </p>
 
                 <div className="flex flex-wrap gap-2 pt-2">
@@ -1118,7 +1213,19 @@ export default function SinglePageContent({
             <div className="group bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
               <div className="h-36 sm:h-48 bg-gradient-to-br from-amber-500 via-yellow-500 to-lime-500 relative overflow-hidden">
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-5xl sm:text-7xl">🚗</span>
+                  <svg
+                    className="w-16 h-16 sm:w-20 sm:h-20 text-white/90"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.5}
+                      d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"
+                    />
+                  </svg>
                 </div>
                 <div className="absolute -top-10 -right-10 w-40 h-40 bg-white/10 rounded-full"></div>
                 <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-white/10 rounded-full"></div>
@@ -1131,7 +1238,7 @@ export default function SinglePageContent({
                       Dynamic Traffic Management
                     </h3>
                     <p className="text-xs sm:text-sm text-amber-600 font-medium mt-1">
-                      Data & Model Engineer · Smart City
+                      Group Project
                     </p>
                   </div>
                   <span className="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-semibold rounded-full">
@@ -1140,10 +1247,10 @@ export default function SinglePageContent({
                 </div>
 
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Developed a computer vision pipeline using YOLOv8 to detect
-                  and classify vehicles from urban traffic cameras. Implemented
-                  lane-level spatial analysis for automated mobile barrier
-                  adjustments.
+                  Course project for traffic optimization. Used YOLOv8 to count
+                  vehicles per lane from camera feeds. The idea was to suggest
+                  when to adjust mobile barriers based on traffic density.
+                  Learned a lot about working in a team.
                 </p>
 
                 <div className="flex flex-wrap gap-2 pt-2">
@@ -1182,7 +1289,19 @@ export default function SinglePageContent({
             <div className="group bg-white rounded-xl sm:rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
               <div className="h-36 sm:h-48 bg-gradient-to-br from-slate-700 via-slate-800 to-slate-900 relative overflow-hidden">
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-5xl sm:text-7xl">🌌</span>
+                  <svg
+                    className="w-16 h-16 sm:w-20 sm:h-20 text-white/90"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.5}
+                      d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
+                    />
+                  </svg>
                 </div>
                 <div className="absolute -top-10 -right-10 w-40 h-40 bg-white/10 rounded-full"></div>
                 <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-white/10 rounded-full"></div>
@@ -1195,7 +1314,7 @@ export default function SinglePageContent({
                       CosmicOptic - Exoplanet Detection
                     </h3>
                     <p className="text-xs sm:text-sm text-slate-600 font-medium mt-1">
-                      NASA Space Apps Challenge 2025
+                      NASA Space Apps 2025
                     </p>
                   </div>
                   <span className="px-3 py-1 bg-purple-100 text-purple-700 text-xs font-semibold rounded-full">
@@ -1204,10 +1323,10 @@ export default function SinglePageContent({
                 </div>
 
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Developed an AI pipeline to analyze stellar light-curve data
-                  from the Kepler Mission to detect potentially habitable
-                  exoplanets. Built a full-stack application with FastAPI for
-                  real-time visualization.
+                  48-hour hackathon project. We analyzed Kepler telescope data
+                  to spot potential exoplanets. Didn't win but learned a ton
+                  about signal processing and working under pressure. Built the
+                  backend with FastAPI.
                 </p>
 
                 <div className="flex flex-wrap gap-2 pt-2">
@@ -1257,7 +1376,7 @@ export default function SinglePageContent({
         {/* Section Header */}
         <div className="text-center mb-8 sm:mb-12">
           <span className="inline-block px-4 py-1.5 bg-blue-100 text-blue-700 text-sm font-medium rounded-full mb-4">
-            🔬 Exploring Ideas
+            Exploring Ideas
           </span>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight">
             <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
@@ -1281,8 +1400,20 @@ export default function SinglePageContent({
           {/* Research Directions - Bento Grid */}
           <div>
             <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4 sm:mb-6 flex items-center gap-3">
-              <span className="w-8 sm:w-10 h-8 sm:h-10 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg sm:rounded-xl flex items-center justify-center text-white text-base sm:text-lg">
-                🎯
+              <span className="w-8 sm:w-10 h-8 sm:h-10 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg sm:rounded-xl flex items-center justify-center text-white">
+                <svg
+                  className="w-4 h-4 sm:w-5 sm:h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                  />
+                </svg>
               </span>
               Research Directions
             </h3>
@@ -1291,25 +1422,25 @@ export default function SinglePageContent({
                 {
                   title: "Computer Vision",
                   desc: "Real-world perception systems for object detection and tracking",
-                  icon: "👁️",
+                  icon: "CV",
                   gradient: "from-blue-500 to-cyan-500",
                 },
                 {
                   title: "Time-Series Forecasting",
                   desc: "Financial prediction under non-stationarity and regime changes",
-                  icon: "📊",
+                  icon: "TS",
                   gradient: "from-indigo-500 to-purple-500",
                 },
                 {
                   title: "Explainable AI",
                   desc: "Model interpretability, SHAP analysis, and building trust in AI",
-                  icon: "🔍",
+                  icon: "XAI",
                   gradient: "from-purple-500 to-pink-500",
                 },
                 {
                   title: "Robust Learning",
                   desc: "Training under data drift, concept shift, and distribution changes",
-                  icon: "🛡️",
+                  icon: "RL",
                   gradient: "from-emerald-500 to-teal-500",
                 },
               ].map((item, i) => (
@@ -1321,7 +1452,9 @@ export default function SinglePageContent({
                     <div
                       className={`w-14 h-14 bg-gradient-to-br ${item.gradient} rounded-xl flex items-center justify-center shadow-md flex-shrink-0`}
                     >
-                      <span className="text-2xl">{item.icon}</span>
+                      <span className="text-white font-bold text-sm">
+                        {item.icon}
+                      </span>
                     </div>
                     <div>
                       <h4 className="font-bold text-gray-800 text-lg">
@@ -1338,8 +1471,20 @@ export default function SinglePageContent({
           {/* Current Work - Featured Card */}
           <div>
             <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4 sm:mb-6 flex items-center gap-3">
-              <span className="w-8 sm:w-10 h-8 sm:h-10 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg sm:rounded-xl flex items-center justify-center text-white text-base sm:text-lg">
-                ⚡
+              <span className="w-8 sm:w-10 h-8 sm:h-10 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg sm:rounded-xl flex items-center justify-center text-white">
+                <svg
+                  className="w-4 h-4 sm:w-5 sm:h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                  />
+                </svg>
               </span>
               Current Work
             </h3>
@@ -1392,14 +1537,38 @@ export default function SinglePageContent({
           {/* Publications */}
           <div>
             <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4 sm:mb-6 flex items-center gap-3">
-              <span className="w-8 sm:w-10 h-8 sm:h-10 bg-gradient-to-br from-violet-500 to-purple-600 rounded-lg sm:rounded-xl flex items-center justify-center text-white text-base sm:text-lg">
-                📄
+              <span className="w-8 sm:w-10 h-8 sm:h-10 bg-gradient-to-br from-violet-500 to-purple-600 rounded-lg sm:rounded-xl flex items-center justify-center text-white">
+                <svg
+                  className="w-4 h-4 sm:w-5 sm:h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                  />
+                </svg>
               </span>
               Publications & Preprints
             </h3>
             <div className="bg-gradient-to-br from-violet-50 to-purple-50 rounded-xl sm:rounded-2xl p-6 sm:p-8 border border-violet-100 text-center">
               <div className="w-20 h-20 bg-gradient-to-br from-violet-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                <span className="text-3xl">📚</span>
+                <svg
+                  className="w-8 h-8 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                  />
+                </svg>
               </div>
               <h4 className="text-lg font-bold text-gray-800 mb-2">
                 Coming Soon
@@ -1415,8 +1584,20 @@ export default function SinglePageContent({
           {/* Collaboration CTA */}
           <div>
             <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4 sm:mb-6 flex items-center gap-3">
-              <span className="w-8 sm:w-10 h-8 sm:h-10 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-lg sm:rounded-xl flex items-center justify-center text-white text-base sm:text-lg">
-                🤝
+              <span className="w-8 sm:w-10 h-8 sm:h-10 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-lg sm:rounded-xl flex items-center justify-center text-white">
+                <svg
+                  className="w-4 h-4 sm:w-5 sm:h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                  />
+                </svg>
               </span>
               Collaboration
             </h3>
@@ -1478,7 +1659,7 @@ export default function SinglePageContent({
         {/* Section Header */}
         <div className="text-center mb-8 sm:mb-12">
           <span className="inline-block px-4 py-1.5 bg-green-100 text-green-700 text-sm font-medium rounded-full mb-4">
-            🏆 Achievements
+            Achievements
           </span>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight">
             <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
@@ -1502,8 +1683,20 @@ export default function SinglePageContent({
           {/* Awards & Achievements - Horizontal Scroll */}
           <div className="overflow-visible">
             <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4 sm:mb-6 flex items-center gap-3">
-              <span className="w-8 sm:w-10 h-8 sm:h-10 bg-gradient-to-br from-amber-500 to-orange-500 rounded-lg sm:rounded-xl flex items-center justify-center text-white text-base sm:text-lg">
-                🏅
+              <span className="w-8 sm:w-10 h-8 sm:h-10 bg-gradient-to-br from-amber-500 to-orange-500 rounded-lg sm:rounded-xl flex items-center justify-center text-white">
+                <svg
+                  className="w-4 h-4 sm:w-5 sm:h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
+                  />
+                </svg>
               </span>
               Awards & Achievements
             </h3>
@@ -1599,13 +1792,25 @@ export default function SinglePageContent({
                 <div className="flex-shrink-0 w-64 sm:w-80">
                   <div className="h-full rounded-xl sm:rounded-2xl border-2 border-dashed border-amber-300 bg-amber-50/50 flex flex-col items-center justify-center p-6 sm:p-8 min-h-[280px] sm:min-h-[320px]">
                     <div className="w-16 h-16 bg-gradient-to-br from-amber-500 to-orange-500 rounded-2xl flex items-center justify-center mb-4 shadow-lg">
-                      <span className="text-2xl">🏆</span>
+                      <svg
+                        className="w-8 h-8 text-white"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+                        />
+                      </svg>
                     </div>
                     <h4 className="font-bold text-amber-700 text-lg">
                       More Coming
                     </h4>
                     <p className="text-amber-600/70 text-sm text-center mt-2">
-                      Working towards more achievements!
+                      Working on more projects and achievements
                     </p>
                   </div>
                 </div>
@@ -1616,8 +1821,20 @@ export default function SinglePageContent({
           {/* Online Certifications Grid */}
           <div>
             <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4 sm:mb-6 flex items-center gap-3">
-              <span className="w-8 sm:w-10 h-8 sm:h-10 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg sm:rounded-xl flex items-center justify-center text-white text-base sm:text-lg">
-                📜
+              <span className="w-8 sm:w-10 h-8 sm:h-10 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg sm:rounded-xl flex items-center justify-center text-white">
+                <svg
+                  className="w-4 h-4 sm:w-5 sm:h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
+                  />
+                </svg>
               </span>
               Professional Certifications
             </h3>
@@ -1626,8 +1843,8 @@ export default function SinglePageContent({
               {/* AI & ML Category */}
               <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-blue-100">
                 <div className="flex items-center gap-2 mb-4">
-                  <span className="w-8 h-8 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center text-white text-sm">
-                    🤖
+                  <span className="w-8 h-8 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center text-white text-xs font-bold">
+                    AI
                   </span>
                   <h4 className="font-bold text-gray-800">
                     AI & Machine Learning
@@ -1757,7 +1974,7 @@ export default function SinglePageContent({
         {/* Section Header */}
         <div className="text-center mb-8 sm:mb-12">
           <span className="inline-block px-4 py-1.5 bg-indigo-100 text-indigo-700 text-sm font-medium rounded-full mb-4">
-            📄 My Resume
+            My Resume
           </span>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight">
             <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
@@ -1854,7 +2071,7 @@ export default function SinglePageContent({
             {/* Show message on mobile, iframe on larger screens */}
             <div className="block sm:hidden text-center p-6 bg-white rounded-xl border border-gray-200">
               <p className="text-gray-600 text-sm">
-                📄 Download the CV above to view on mobile devices
+                Download the CV above to view on mobile devices
               </p>
             </div>
             <div

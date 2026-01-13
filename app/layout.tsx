@@ -2,7 +2,7 @@ import "./globals.css";
 import MainContent from "./components/MainContent";
 import type { Metadata } from "next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   title: "Huynh Quoc Viet | Portfolio",
