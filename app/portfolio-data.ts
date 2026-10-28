@@ -451,7 +451,7 @@ export const competitions = [
   },
   {
     title: "NASA Space Apps 2025 · CosmicOptic",
-    photo: "/images/mylaptop_in_NASASpaceApp25.jpg",
+    photo: "/images/me_background_NASASpaceApp25.jpg",
     role: { en: "Data & Model Engineer", vi: "Kỹ sư dữ liệu & mô hình" },
     period: "2025",
     status: { en: "48-hour hackathon", vi: "Hackathon 48 giờ" },
