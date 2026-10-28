@@ -432,36 +432,35 @@ a {
   background: var(--surface-alt);
   color: var(--ink);
   border-block: 1px solid var(--line);
+  padding-block: 1.5rem;
 }
 
 .proof-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
 }
 
 .proof-item {
   display: flex;
-  min-height: 9rem;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 2rem;
-  padding: 1.5rem 2rem 1.5rem 0;
-}
-
-.proof-item + .proof-item {
-  padding-left: 2rem;
+  justify-content: center;
+  gap: 0.35rem;
 }
 
 .proof-item strong {
   font-family: var(--font-display), sans-serif;
-  font-size: clamp(1.8rem, 3vw, 3rem);
+  font-size: clamp(1.35rem, 2.2vw, 2.2rem);
   font-weight: 600;
   letter-spacing: -0.025em;
+  line-height: 1.15;
+  color: var(--ink);
 }
 
 .proof-item span {
   color: var(--muted);
-  font-size: 0.9rem;
+  font-size: 0.875rem;
+  line-height: 1.4;
 }
 
 .page-section {
@@ -1189,17 +1188,30 @@ a {
     font-size: 1.15rem;
   }
 
+  .proof-strip {
+    padding-block: 1rem;
+  }
+
   .proof-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
   }
 
   .proof-item {
-    min-height: 7.5rem;
-    padding: 1.25rem 0;
+    min-height: auto;
+    padding: 0;
+    gap: 0.25rem;
   }
 
-  .proof-item + .proof-item {
-    padding-left: 0;
+  .proof-item strong {
+    font-size: clamp(0.9rem, 3.3vw, 1.25rem);
+    white-space: nowrap;
+    line-height: 1.15;
+  }
+
+  .proof-item span {
+    font-size: clamp(0.6875rem, 2.2vw, 0.775rem);
+    line-height: 1.25;
   }
 
   .page-section {
