@@ -1,40 +1,55 @@
 import "./globals.css";
-import MainContent from "./components/MainContent";
-import type { Metadata } from "next";
-import { SpeedInsights } from "@vercel/speed-insights/next";
+import type { Metadata, Viewport } from "next";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
-  title: "Huynh Quoc Viet | Portfolio",
+  title: "Huynh Quoc Viet | Verifiable AI Systems",
   description:
-    "Portfolio of Huynh Quoc Viet - AI student at FPT University focused on computer vision, financial time-series forecasting, and explainable AI.",
+    "Research and engineering portfolio of Huynh Quoc Viet: trustworthy machine learning, time-series forecasting, computer vision, reinforcement learning, and evidence-backed AI systems.",
   keywords: [
     "Huynh Quoc Viet",
-    "AI",
-    "Machine Learning",
-    "Computer Vision",
+    "AI Researcher",
+    "Machine Learning Engineer",
+    "Trustworthy AI",
+    "Conformal Prediction",
     "Time-Series Forecasting",
-    "FPT University",
-    "Deep Learning",
+    "Computer Vision",
+    "Reinforcement Learning",
   ],
   authors: [{ name: "Huynh Quoc Viet" }],
   openGraph: {
-    title: "Huynh Quoc Viet | Portfolio",
-    description:
-      "Portfolio of Huynh Quoc Viet - AI student focused on computer vision and time-series forecasting.",
+    title: "Huynh Quoc Viet | Verifiable AI Systems",
+    description: "Evidence-backed AI research, engineering systems, competition work, and Master CV.",
     type: "website",
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: "#0b0d11",
+};
+
+const themeScript = `
+  try {
+    const saved = localStorage.getItem('portfolio-theme');
+    const dark = saved !== 'light';
+    document.documentElement.classList.toggle('dark', dark);
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', dark ? '#0b0d11' : '#f3f4ef');
+  } catch (_) {}
+`;
+
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className="bg-gradient-to-b from-gray-50 to-white text-gray-900 antialiased overflow-hidden">
-        <MainContent />
+    <html lang="en" className="dark" suppressHydrationWarning>
+      <head>
+        <link rel="preload" href="/fonts/geist-latin.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
+      <body>
+        {children}
         <SpeedInsights />
         <Analytics />
       </body>

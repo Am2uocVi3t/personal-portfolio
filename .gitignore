@@ -43,3 +43,10 @@ next-env.d.ts
 
 # Testing
 coverage/
+
+# Local documents & tools
+.agents/
+.playwright-mcp/
+.taste-skill/
+latex/
+paper/
