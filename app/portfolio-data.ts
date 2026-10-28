@@ -221,8 +221,8 @@ export const papers = [
     image: "/papers/bloom-forecasting.webp",
     title:
       "Stress-Testing Multi-Source Cyanobacterial Bloom Forecasting under Sparse Monitoring",
-    venue: "AJCAI 2026 submission",
-    status: { en: "Review complete", vi: "Đã hoàn tất phản biện" },
+    venue: "ACIIDS 2027",
+    status: { en: "Under review", vi: "Đang phản biện" },
     summary: {
       en: "A reproducibility audit of multi-source forecasting across seven lakes under sparse monitoring.",
       vi: "Audit khả năng tái lập của dự báo đa nguồn trên bảy hồ trong điều kiện quan trắc thưa.",
