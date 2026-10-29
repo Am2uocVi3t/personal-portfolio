@@ -666,6 +666,7 @@ a {
 .project-row {
   padding-inline: clamp(0.75rem, 2vw, 2rem);
   background: var(--workspace-card);
+  overflow: hidden;
 }
 
 .project-row summary {
@@ -715,9 +716,10 @@ a {
 
 .project-detail {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(15rem, 0.42fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
   gap: 3rem;
-  padding: 0 3rem 3rem clamp(0rem, 4vw, 4rem);
+  align-items: start;
+  padding: 1rem 0 2rem;
 }
 
 .evidence-list-dark li {

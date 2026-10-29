@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { contactLinks, navigation, ui, type Language, type Theme } from "../portfolio-data";
 import PreferenceControls from "./PreferenceControls";
 import SinglePageContent from "./SinglePageContent";
+import CaseStudyContent from "./CaseStudyContent";
 
 function MenuIcon({ open }: { open: boolean }) {
   return (
@@ -25,8 +26,8 @@ function DownRightIcon() {
   );
 }
 
-export default function MainContent() {
-  const [activeSection, setActiveSection] = useState("home");
+export default function MainContent({ caseStudySlug }: { caseStudySlug?: string }) {
+  const [activeSection, setActiveSection] = useState(caseStudySlug ? "research" : "home");
   const [language, setLanguage] = useState<Language>("en");
   const [theme, setTheme] = useState<Theme>("dark");
   const [preferencesReady, setPreferencesReady] = useState(false);
@@ -91,7 +92,7 @@ export default function MainContent() {
 
       <header className="site-header">
         <div className="header-inner">
-          <a className="wordmark" href="#home" aria-label="Huynh Quoc Viet, home">
+          <a className="wordmark" href={caseStudySlug ? "/#home" : "#home"} aria-label="Huynh Quoc Viet, home">
             viet<span className="wordmark-dot">.</span>
           </a>
 
@@ -99,7 +100,7 @@ export default function MainContent() {
             {navigation.map((item) => (
               <a
                 key={item.id}
-                href={`#${item.id}`}
+                href={`${caseStudySlug ? "/" : ""}#${item.id}`}
                 className={activeSection === item.id ? "active" : undefined}
                 aria-current={activeSection === item.id ? "page" : undefined}
               >
@@ -136,7 +137,7 @@ export default function MainContent() {
           {navigation.map((item) => (
             <a
               key={item.id}
-              href={`#${item.id}`}
+              href={`${caseStudySlug ? "/" : ""}#${item.id}`}
               onClick={() => setMenuOpen(false)}
               className={activeSection === item.id ? "active" : undefined}
               aria-current={activeSection === item.id ? "page" : undefined}
@@ -148,7 +149,7 @@ export default function MainContent() {
         </nav>
       </header>
 
-      <SinglePageContent language={language} />
+      {caseStudySlug ? <CaseStudyContent slug={caseStudySlug} language={language} /> : <SinglePageContent language={language} />}
     </div>
   );
 }

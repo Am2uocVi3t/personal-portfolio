@@ -9,6 +9,11 @@ export const contactLinks = {
 
 export const navigation = [
   {
+    id: "experience",
+    label: { en: "Experience", vi: "Kinh nghiệm" },
+    icon: "/logos/about.png",
+  },
+  {
     id: "research",
     label: { en: "Research", vi: "Nghiên cứu" },
     icon: "/logos/research.png",
@@ -271,6 +276,35 @@ export const projects = [
     link: "https://github.com/Team-SafeTrail/fitsync-app",
   },
   {
+    title: "BioListen VN",
+    subtitle: {
+      en: "VAIC 2026 · Ecological acoustic monitoring",
+      vi: "VAIC 2026 · Giám sát âm thanh sinh thái",
+    },
+    role: {
+      en: "AI Lead · Model Engineering · NeuraX.ai",
+      vi: "AI Lead · Kỹ thuật mô hình · NeuraX.ai",
+    },
+    period: "Jul 2026",
+    status: { en: "Competition prototype · Top 10, Stage 1", vi: "Prototype dự thi · Top 10 Vòng 1" },
+    facts: [
+      {
+        en: "Developed a dual-head EfficientNet-V2-S audio classifier for three ecological groups (birds, frogs and insects) and nine threat/background classes, using mel-spectrogram inputs and masked multi-task loss.",
+        vi: "Phát triển bộ phân loại âm thanh EfficientNet-V2-S hai nhánh cho ba nhóm sinh thái (chim, ếch, côn trùng) và chín lớp mối đe dọa/background, dùng đầu vào mel-spectrogram và masked multi-task loss.",
+      },
+      {
+        en: "Built ONNX export and a Grad-CAM workflow in the training notebook. The team prototype connects ONNX Runtime and FastAPI to a Next.js dashboard for audio analysis, detection history and Vietnamese patrol reports.",
+        vi: "Xây dựng bước xuất ONNX và quy trình Grad-CAM trong notebook huấn luyện. Prototype của đội kết nối ONNX Runtime và FastAPI với dashboard Next.js để phân tích âm thanh, xem lịch sử phát hiện và báo cáo tuần tra tiếng Việt.",
+      },
+      {
+        en: "Built for the VAIC 2026 biodiversity-monitoring challenge with team NeuraX.ai. The dashboard includes simulated station feeds; field deployment, accuracy and edge latency have not been independently validated.",
+        vi: "Phát triển cùng đội NeuraX.ai cho bài toán giám sát đa dạng sinh học tại VAIC 2026. Dashboard có luồng dữ liệu trạm mô phỏng; triển khai thực địa, độ chính xác và độ trễ tại biên chưa được kiểm chứng độc lập.",
+      },
+    ],
+    tags: ["PyTorch", "EfficientNet-V2-S", "ONNX Runtime", "FastAPI", "Next.js", "Audio AI"],
+    link: "https://github.com/hei1sme/BioListen-VN",
+  },
+  {
     title: "Adaptive Preference MORL",
     subtitle: {
       en: "Compute-matched RL research harness",
@@ -521,6 +555,12 @@ export const skillLines = [
 ] as const;
 
 export const certifications = [
+  {
+    title: { en: "On-the-Job Training", vi: "Hoàn thành thực tập OJT" },
+    issuer: "FPT University · Kỷ Nguyên Số · 2026",
+    image: "/certifications/ojt-certificate.webp",
+    link: "/certifications/HuynhQuocViet-SE194225-ChúngchỉOJT-OJT268336-28102026.pdf",
+  },
   {
     title: {
       en: "Honorable Student of the Semester",

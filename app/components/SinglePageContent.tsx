@@ -1,7 +1,12 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useRef, useState } from "react";
+import ExperienceSection from "./ExperienceSection";
+import ProjectAccordion from "./ProjectAccordion";
+import { researchStudies } from "../research-data";
+import { projectMedia } from "../project-media";
 import {
   certifications,
   contactLinks,
@@ -31,7 +36,7 @@ function ExternalArrow() {
 
 function MenuPlus() {
   return (
-    <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" className="h-5 w-5 transition-transform duration-200 group-open:rotate-45">
+    <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" className="h-5 w-5">
       <path d="M10 3v14M3 10h14" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
     </svg>
   );
@@ -106,12 +111,14 @@ export default function SinglePageContent({ language }: SinglePageContentProps) 
         </div>
       </section>
 
+      <ExperienceSection language={language} />
+
       <section id="research" className="page-section surface-paper content-auto">
         <div className="site-shell">
           <SectionIntro title={text.researchTitle} lead={text.researchLead} />
 
           <div className="research-list">
-            {papers.map((paper) => (
+            {papers.map((paper, index) => (
               <article key={paper.title} className="research-row">
                 <div className="research-body">
                   <h3>{paper.displayTitle}</h3>
@@ -122,15 +129,20 @@ export default function SinglePageContent({ language }: SinglePageContentProps) 
                       <li key={fact.en}>{localized(fact, language)}</li>
                     ))}
                   </ul>
+                  <div className="research-actions">
+                  <Link className="action-link action-link-primary" href={`/research/${researchStudies[index].slug}`}>
+                    {language === "en" ? "Explore case study" : "Khám phá case study"}<ExternalArrow />
+                  </Link>
                   <a className="inline-link" href={paper.link} target="_blank" rel="noreferrer">
                     {text.paper}
                     <ExternalArrow />
                   </a>
+                  </div>
                 </div>
                 <div className="research-meta">
-                  <a className="paper-preview" href={paper.link} target="_blank" rel="noreferrer" aria-label={`${text.paper}: ${paper.title}`}>
+                  <Link className="paper-preview" href={`/research/${researchStudies[index].slug}`} aria-label={`${language === "en" ? "Case study" : "Nghiên cứu"}: ${paper.title}`}>
                     <Image src={paper.image} alt={language === "en" ? `First page of ${paper.title}` : `Trang đầu: ${paper.title}`} width={640} height={850} sizes="(max-width: 680px) 70vw, 25vw" />
-                  </a>
+                  </Link>
                   <p>{paper.venue}</p>
                   <p>{localized(paper.status, language)}</p>
                 </div>
@@ -150,8 +162,7 @@ export default function SinglePageContent({ language }: SinglePageContentProps) 
 
           <div className="project-ledger">
             {projects.map((project, index) => (
-              <details key={project.title} className="project-row group" open={index === 0}>
-                <summary>
+              <ProjectAccordion key={project.title} initiallyOpen={index === 0} summary={<>
                   <span className="project-name">
                     <strong>{project.title}</strong>
                     <span>{localized(project.subtitle, language)}</span>
@@ -164,8 +175,15 @@ export default function SinglePageContent({ language }: SinglePageContentProps) 
                   <span className="project-toggle" aria-hidden="true">
                     <MenuPlus />
                   </span>
-                </summary>
+                </>}>
                 <div className="project-detail">
+                  <figure className="project-visual">
+                    <a href={projectMedia[project.title].src} target="_blank" rel="noreferrer" aria-label={`${language === "en" ? "Open image" : "Mở hình"}: ${project.title}`}>
+                      <Image src={projectMedia[project.title].src} alt={projectMedia[project.title].alt[language]} width={1200} height={720} sizes="(max-width: 900px) 90vw, 42vw" />
+                    </a>
+                    <figcaption>{projectMedia[project.title].caption[language]} {projectMedia[project.title].source ? <a href={projectMedia[project.title].source} target="_blank" rel="noreferrer">{language === "en" ? "Source ↗" : "Nguồn ↗"}</a> : null}</figcaption>
+                  </figure>
+                  <div className="project-evidence">
                   <ul className="evidence-list evidence-list-dark">
                     {project.facts.map((fact) => (
                       <li key={fact.en}>{localized(fact, language)}</li>
@@ -180,8 +198,9 @@ export default function SinglePageContent({ language }: SinglePageContentProps) 
                       <ExternalArrow />
                     </a> : <p>{language === "en" ? "Research materials are not publicly available." : "Tài liệu nghiên cứu chưa được công khai."}</p>}
                   </div>
+                  </div>
                 </div>
-              </details>
+              </ProjectAccordion>
             ))}
           </div>
         </div>
