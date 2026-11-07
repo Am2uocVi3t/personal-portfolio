@@ -4,7 +4,7 @@ export type LocalizedText = Record<Language, string>;
 
 export const contactLinks = {
   linkedin: "https://www.linkedin.com/in/quoc-viet-huynh/",
-  email: "https://mail.google.com/mail/?view=cm&fs=1&to=tyviet1609%40gmail.com",
+  email: "https://mail.google.com/mail/?view=cm&fs=1&to=viethq1609%40gmail.com",
 } as const;
 
 export const navigation = [
@@ -38,12 +38,12 @@ export const navigation = [
 
 export const ui = {
   en: {
-    role: "AI Researcher & Machine Learning Engineer",
+    role: "AI Research · Machine Learning · Data Engineering",
     heroLead:
       "I turn research questions into reproducible AI systems: calibrated, stress-tested, and built to survive contact with real data.",
     location: "Ho Chi Minh City, Vietnam · UTC+7",
-    availability: "Open to research and machine learning opportunities",
-    status: "Open to research and machine learning opportunities",
+    availability: "Open to AI research, machine learning, and data opportunities",
+    status: "Open to AI research, machine learning, and data opportunities",
     connect: "Connect",
     viewWork: "View verified work",
     contact: "Start a conversation",
@@ -58,17 +58,17 @@ export const ui = {
       "Competition work is where research judgment, product scope, and delivery time collide.",
     profileTitle: "Research depth. Product range.",
     profileLead:
-      "AI Engineering student at FPT University and AI Tech Lead at SpeedyLabX, working across trustworthy ML, time series, computer vision, and reinforcement learning.",
-    cvTitle: "The complete evidence trail.",
+      "AI Engineering student at FPT University and AI Tech Lead at SpeedyLabX, connecting trustworthy ML research with data pipelines, computer vision, and reproducible evaluation.",
+    cvTitle: "Research and engineering, in two pages.",
     cvLead:
-      "The Master CV is the long-form source of truth. It keeps verified results, limitations, project scope, and research status together before role-specific tailoring.",
-    openCv: "Open Master CV",
+      "A concise ATS-ready resume covering AI research, machine learning, data engineering, verified results, and project scope.",
+    openCv: "Open resume",
     downloadCv: "Download PDF",
     previewCv: "Preview on this page",
     closePreview: "Close preview",
     contactTitle: "Open to hard AI problems.",
     contactLead:
-      "I am interested in research, ML engineering, and technically ambitious collaborations.",
+      "I am interested in AI research, machine learning, data engineering, and technically ambitious collaborations.",
     menu: "Open navigation",
     close: "Close navigation",
     switchLanguage: "Đổi sang tiếng Việt",
@@ -79,12 +79,12 @@ export const ui = {
     less: "Hide evidence",
   },
   vi: {
-    role: "Nhà nghiên cứu AI & Kỹ sư Machine Learning",
+    role: "Nghiên cứu AI · Machine Learning · Kỹ thuật Dữ liệu",
     heroLead:
       "Tôi biến câu hỏi nghiên cứu thành hệ thống AI có thể tái lập: được hiệu chỉnh, stress-test và đủ vững khi gặp dữ liệu thực tế.",
     location: "TP. Hồ Chí Minh, Việt Nam · UTC+7",
-    availability: "Sẵn sàng cho cơ hội nghiên cứu và machine learning",
-    status: "Sẵn sàng cho cơ hội nghiên cứu và machine learning",
+    availability: "Sẵn sàng cho cơ hội nghiên cứu AI, machine learning và dữ liệu",
+    status: "Sẵn sàng cho cơ hội nghiên cứu AI, machine learning và dữ liệu",
     connect: "Kết nối",
     viewWork: "Xem công việc đã kiểm chứng",
     contact: "Bắt đầu trao đổi",
@@ -99,17 +99,17 @@ export const ui = {
       "Cuộc thi là nơi tư duy nghiên cứu, phạm vi sản phẩm và thời gian triển khai va vào nhau.",
     profileTitle: "Nghiên cứu sâu. Xây dựng rộng.",
     profileLead:
-      "Sinh viên Kỹ thuật Trí tuệ Nhân tạo tại Đại học FPT và AI Tech Lead tại SpeedyLabX, tập trung vào trustworthy ML, chuỗi thời gian, thị giác máy tính và học tăng cường.",
-    cvTitle: "Toàn bộ chuỗi bằng chứng.",
+      "Sinh viên Kỹ thuật Trí tuệ Nhân tạo tại Đại học FPT và AI Tech Lead tại SpeedyLabX, kết nối nghiên cứu ML đáng tin cậy với pipeline dữ liệu, thị giác máy tính và đánh giá có thể tái lập.",
+    cvTitle: "Nghiên cứu và kỹ thuật trong hai trang.",
     cvLead:
-      "Master CV là nguồn dữ liệu dài hạn: giữ kết quả đã kiểm chứng, giới hạn, phạm vi dự án và trạng thái nghiên cứu trước khi tinh chỉnh theo từng vị trí.",
-    openCv: "Mở Master CV",
+      "CV chuẩn ATS, gói gọn nghiên cứu AI, machine learning, kỹ thuật dữ liệu, kết quả đã kiểm chứng và phạm vi dự án.",
+    openCv: "Mở CV",
     downloadCv: "Tải PDF",
     previewCv: "Xem trước trên trang",
     closePreview: "Đóng bản xem trước",
     contactTitle: "Sẵn sàng cho bài toán AI khó.",
     contactLead:
-      "Tôi quan tâm đến nghiên cứu, ML engineering và các dự án hợp tác có tham vọng kỹ thuật.",
+      "Tôi quan tâm đến nghiên cứu AI, machine learning, kỹ thuật dữ liệu và các dự án hợp tác có tham vọng kỹ thuật.",
     menu: "Mở điều hướng",
     close: "Đóng điều hướng",
     switchLanguage: "Switch to English",
@@ -474,16 +474,6 @@ export const competitions = [
     link: "https://github.com/hei1sme/BioListen-VN",
   },
   {
-    title: "NASA Space Apps 2026",
-    role: { en: "AI & Tech Lead", vi: "AI & Tech Lead" },
-    period: "Nov 14–15, 2026",
-    status: { en: "Registered · Upcoming", vi: "Đã đăng ký · Sắp diễn ra" },
-    description: {
-      en: "Leading technical preparation and challenge selection for a five-person cross-disciplinary team spanning AI, backend, hardware/IoT, and environmental science/GIS.",
-      vi: "Dẫn dắt chuẩn bị kỹ thuật và chọn challenge cho đội liên ngành 5 người gồm AI, backend, hardware/IoT và environmental science/GIS.",
-    },
-  },
-  {
     title: "NASA Space Apps 2025 · CosmicOptic",
     photo: "/images/me_background_NASASpaceApp25.jpg",
     role: { en: "Data & Model Engineer", vi: "Kỹ sư dữ liệu & mô hình" },
@@ -518,7 +508,7 @@ export const education = [
       en: "B.Eng. in Artificial Intelligence",
       vi: "Kỹ sư Trí tuệ Nhân tạo",
     },
-    period: { en: "Expected Jan 2027", vi: "Dự kiến 01/2027" },
+    period: { en: "Jun 2023 – Expected Jun 2027", vi: "06/2023 – dự kiến 06/2027" },
     detail: {
       en: "GPA 3.12/4.0 · Honorable Student, Fall 2025",
       vi: "GPA 3,12/4,0 · Sinh viên Giỏi, Fall 2025",
@@ -531,7 +521,7 @@ export const education = [
       en: "English Proficiency Program",
       vi: "Chương trình Nâng cao Năng lực Tiếng Anh",
     },
-    period: { en: "Feb 2024", vi: "02/2024" },
+    period: { en: "Dec 2023 – Feb 2024", vi: "12/2023 – 02/2024" },
     detail: { en: "Kuala Lumpur, Malaysia", vi: "Kuala Lumpur, Malaysia" },
   },
 ] as const;

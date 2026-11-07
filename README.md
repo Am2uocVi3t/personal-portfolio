@@ -86,6 +86,6 @@ MIT License - feel free to use this template for your own portfolio!
 
 ## 📧 Contact
 
-- **Email**: tyviet1609@gmail.com
+- **Email**: viethq1609@gmail.com
 - **LinkedIn**: [quoc-viet-huynh](https://www.linkedin.com/in/quoc-viet-huynh/)
 - **GitHub**: [Am2uocVi3t](https://github.com/Am2uocVi3t)

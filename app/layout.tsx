@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Huynh Quoc Viet" }],
   openGraph: {
     title: "Huynh Quoc Viet | Verifiable AI Systems",
-    description: "Evidence-backed AI research, engineering systems, competition work, and Master CV.",
+    description: "Evidence-backed AI research, machine learning, data engineering projects, and a two-page resume.",
     type: "website",
   },
 };

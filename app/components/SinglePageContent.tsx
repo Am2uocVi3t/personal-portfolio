@@ -325,11 +325,11 @@ export default function SinglePageContent({ language }: SinglePageContentProps) 
         <div className="site-shell">
           <SectionIntro title={text.cvTitle} lead={text.cvLead} />
           <div className="cv-actions">
-            <a className="action-link action-link-primary" href="/cv/ATS_Resume_master.pdf" target="_blank" rel="noreferrer">
+            <a className="action-link action-link-primary" href="/cv/Huynh_Quoc_Viet_Resume.pdf" target="_blank" rel="noreferrer">
               {text.openCv}
               <ExternalArrow />
             </a>
-            <a className="text-link" href="/cv/ATS_Resume_master.pdf" download>
+            <a className="text-link" href="/cv/Huynh_Quoc_Viet_Resume.pdf" download>
               {text.downloadCv}
             </a>
             <button type="button" className="text-link" onClick={() => setShowCv((value) => !value)} aria-expanded={showCv} aria-controls="cv-preview">
@@ -339,7 +339,7 @@ export default function SinglePageContent({ language }: SinglePageContentProps) 
 
           {showCv ? (
             <div id="cv-preview" className="cv-preview">
-              <iframe src="/cv/ATS_Resume_master.pdf#view=FitH" title="Huynh Quoc Viet Master CV" loading="lazy" />
+              <iframe src="/cv/Huynh_Quoc_Viet_Resume.pdf#view=FitH" title="Huynh Quoc Viet Resume" loading="lazy" />
             </div>
           ) : null}
         </div>
